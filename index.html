@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Offline Survey</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script language="javascript" src="/js/bundle.js"></script>
+    <script language="javascript" src="/js/App.js"></script>
+</head>
+
+<body>
+
+<h1>Was today's session valuables?</h1>
+
+<div id="ping"></div>
+
+<div class="options">
+    <div class="option" data-option="1">
+        <img src="/images/happy.png">
+        <div id="results1" class="box">
+            <label for="qty"><abbr title="Quantity">Qty</abbr></label>
+            <input id="qty" class="js-field" disabled value="0">
+        </div>
+    </div>
+    <div class="option" data-option="2">
+        <img src="/images/neutral.png">
+        <div id="results2" class="box">
+            <label for="qty2"><abbr title="Quantity">Qty</abbr></label>
+            <input id="qty2" class="js-field" disabled value="0"/>
+        </div>
+    </div>
+    <div class="option" data-option="3">
+        <img src="/images/sad.png">
+        <div id="results3" class="box">
+            <label for="qty3"><abbr title="Quantity">Qty</abbr></label>
+            <input id="qty3" class="js-field" disabled value="0"/>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
