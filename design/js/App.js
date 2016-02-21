@@ -6,6 +6,12 @@ $(function () {
         urls: ['/audio/ping.mp3']
     });
 
+    if (process.env.NODE_ENV === 'production') {
+        window.onbeforeunload = function() {
+          return "If you refresh, the ";
+        };
+    }
+
     $('img').mouseup(function () {
         sound.play();
         let currentVal = $(this).closest('.option').find('.js-field').val();
