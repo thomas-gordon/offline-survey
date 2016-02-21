@@ -20,7 +20,8 @@
   },
   "main": "server/app.js",
   "scripts": {
-    "start": "gulp build --deploy"
+    "start": "node server/app.js",
+    "postinstall": "gulp build"
   },
   "babel": {},
   "dependencies": {

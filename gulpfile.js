@@ -66,39 +66,22 @@ gulp.task('default', function (callback) {
         'index',
         'copy',
         'scss',
-        ['browserify','browser-sync','watch',
-        'server'],
+        [
+            'browserify',
+            'browser-sync',
+            'watch',
+            'server'
+        ],
         callback
     )
 });
 
 gulp.task('build', function () {
-
     runSequence(
         'index',
         'copy',
         'scss',
         'browserify',
-        'server'
         callback
     )
-
-    if (util.env.deploy === true) {
-        runSequence(
-            'index',
-            'copy',
-            'scss',
-            'browserify',
-            'server'
-            callback
-        )
-    } else {
-        runSequence(
-            'index',
-            'copy',
-            'scss',
-            'browserify'
-            callback
-        )
-    }
 });
