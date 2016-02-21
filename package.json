@@ -18,9 +18,8 @@
       "uglifyify"
     ]
   },
-  "main": "server/app.js",
   "scripts": {
-    "start": "node server/app.js",
+    "start": "node server/app",
     "postinstall": "gulp build"
   },
   "babel": {},
