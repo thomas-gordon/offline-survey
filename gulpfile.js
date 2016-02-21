@@ -73,18 +73,32 @@ gulp.task('default', function (callback) {
 });
 
 gulp.task('build', function () {
-    console.log(util.env);
-    if (util.env.deploy === true) {
-        console.log('hehe')
-    }
-});
 
-gulp.task('deploy', function (callback) {
     runSequence(
         'index',
         'copy',
         'scss',
         'browserify',
+        'server'
         callback
     )
+
+    if (util.env.deploy === true) {
+        runSequence(
+            'index',
+            'copy',
+            'scss',
+            'browserify',
+            'server'
+            callback
+        )
+    } else {
+        runSequence(
+            'index',
+            'copy',
+            'scss',
+            'browserify'
+            callback
+        )
+    }
 });
