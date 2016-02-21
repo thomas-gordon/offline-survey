@@ -30,7 +30,7 @@ app.get('/', function (req, res) {
     res.sendFile('index.html', { root: path.join(__dirname, '../build/') });
 });
 
-app.get('/llew', function (req, res) {
+app.get('/admin', function (req, res) {
     res.sendFile('admin.html', { root: path.join(__dirname, '../build/') });
 });
 
