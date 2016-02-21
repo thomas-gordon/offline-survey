@@ -5,9 +5,10 @@ var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 var util = require('gulp-util');
 var gulpIf = require('gulp-if');
+var argv = require('yargs').argv;
 var server = require('gulp-express');
+var build = process.argv.indexOf('build') !== -1 || util.env.type === 'deploy';
 
-var build = false;
 // ----------------------------
 // Error notification methods
 // ----------------------------
@@ -71,7 +72,14 @@ gulp.task('default', function (callback) {
     )
 });
 
-gulp.build('build', function (callback) {
+gulp.task('build', function () {
+    console.log(util.env);
+    if (util.env.deploy === true) {
+        console.log('hehe')
+    }
+});
+
+gulp.task('deploy', function (callback) {
     runSequence(
         'index',
         'copy',
@@ -80,5 +88,3 @@ gulp.build('build', function (callback) {
         callback
     )
 });
-
-
