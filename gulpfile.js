@@ -76,7 +76,7 @@ gulp.task('default', function (callback) {
     )
 });
 
-gulp.task('build', function () {
+gulp.task('build', function (callback) {
     runSequence(
         'index',
         'copy',
