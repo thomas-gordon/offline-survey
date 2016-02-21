@@ -6,9 +6,9 @@ $(function () {
         urls: ['/audio/ping.mp3']
     });
 
-    if (process.env.NODE_ENV === 'production') {
+    if (window.location.hostname === "offline-survey.herokuapp.com") {
         window.onbeforeunload = function() {
-          return "If you refresh, the ";
+          return "If you refresh, the numbers will disappear. Take a screenshot first!";
         };
     }
 
